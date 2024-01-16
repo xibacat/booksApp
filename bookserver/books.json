@@ -1,0 +1,52 @@
+[
+    {
+        "title": "Q",
+        "author": "Luther Blissett",
+        "img": "https://xibacat.github.io/booksApp/books/0.jpg"
+    },
+    {
+        "title": "El amor en tiempos cólera",
+        "author": "Gabriel García Márquez",
+        "img": "https://xibacat.github.io/booksApp/books/1.jpg"
+    },
+    {
+        "title": "Watchmen",
+        "author": "Alan Moore y Dave Gibbons",
+        "img": "https://xibacat.github.io/booksApp/books/2.jpg"
+    },
+    {
+        "title": "54",
+        "author": "Wu Ming",
+        "img": "https://xibacat.github.io/booksApp/books/3.jpg"
+    },
+    {
+        "title": "El ejército de los sonámbulos",
+        "author": "Wu Ming",
+        "img": "https://xibacat.github.io/booksApp/books/4.jpg"
+    },
+    {
+        "title": "Maus",
+        "author": "Art Spiegelman",
+        "img": "https://xibacat.github.io/booksApp/books/5.jpg"
+    },
+    {
+        "title": "El tambor de hojalata",
+        "author": "Günter Grass",
+        "img": "https://xibacat.github.io/booksApp/books/6.jpg"
+    },
+    {
+        "title": "Setenta kilos",
+        "author": "Ramón Palomar",
+        "img": "https://xibacat.github.io/booksApp/books/7.jpg"
+    },
+    {
+        "title": "Malena es nombre de Tango",
+        "author": "Almudena Grandes",
+        "img": "https://xibacat.github.io/booksApp/books/8.jpg"
+    },
+    {
+        "title": "La triología de Nueva York",
+        "author": "Paul Auster",
+        "img": "https://xibacat.github.io/booksApp/books/9.jpg"
+    }
+]

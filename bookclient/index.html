@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>libros</title>
+  <link rel="stylesheet" href="./css/estilos.css">
+  <link rel="stylesheet" href="./css/photon.css">
+  <link rel="stylesheet" href="./node_modules/xel/themes/macos.css">
+  <script src="./node_modules/xel/xel.min.js"></script>
+</head>
+
+<body>
+  <div class="window">
+    <header class="toolbar toolbar-header">
+    </header>
+    <div class="window-content">
+      <div class="pane-group">
+        <div class="pane-sm sidebar">
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Title" id="title-text">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Author" id="author-text">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Image URL" id="img-text">
+            </div>
+            <button class="btn btn-default pull-right" id="submit-btt">Submit</button>
+          </form>
+        </div>
+        <!--panel imágenes-->
+        <div class="pane">
+          <div class="wrapper" id="wrapper">
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <x-notification timeout="2000" id="message"></x-notification>
+
+  <script src="./app.js"></script>
+
+</body>
+
+</html>

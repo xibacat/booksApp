@@ -1,1 +1,4 @@
 .vscode
+package*
+node_modules/
+bookserver/public/
