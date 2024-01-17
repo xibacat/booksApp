@@ -55,12 +55,9 @@ const inicio = (books => {
             //TODO
             // Set current values of selected book in text inputs
             // Change Submit button to Update button
-            submitbut.innerText = "Update";
-            submitbut.classList.remove("btn-primary");
-            submitbut.classList.add("btn-positive");
-            updateFlag = true;
+            changeButton();
 
-            showNotification( "Let's update " + elem.getAttribute("name"));
+            showNotification("Let's update " + elem.getAttribute("name"));
         })
     })
 
@@ -71,10 +68,7 @@ const inicio = (books => {
             // PUT request here, using input text values to build JSON
             showNotification("Updating Data... " + titext.value);
             // Change Submit button text
-            submitbut.innerText = "Submit";
-            submitbut.classList.add("btn-primary");
-            submitbut.classList.remove("btn-positive");
-            updateFlag = false;
+            changeButton();
         } else {
             //TODO
             // Post request here, using input text values to build JSON
@@ -83,6 +77,21 @@ const inicio = (books => {
     })
 });
 
+
+function changeButton() {
+    if (updateFlag) {
+        submitbut.innerText = "Submit";
+        submitbut.classList.add("btn-primary");
+        submitbut.classList.remove("btn-positive");
+        updateFlag = false;
+    }
+    else {
+        submitbut.innerText = "Update";
+        submitbut.classList.remove("btn-primary");
+        submitbut.classList.add("btn-positive");
+        updateFlag = true;
+    }
+}
 
 function showNotification(text) {
     notif.innerHTML = text;
