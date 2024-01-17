@@ -46,8 +46,7 @@ const inicio = (books => {
     // Add eventlisteners to Delete and Update context menu options
     document.querySelectorAll(".del-item").forEach(elem => {
         elem.addEventListener('click', function (event) {
-            notif.innerHTML = "Deleting " + elem.getAttribute("name");
-            notif.setAttribute("opened", true);
+            showNotification("Deleting " + elem.getAttribute("name"));
         })
     })
 
@@ -57,10 +56,11 @@ const inicio = (books => {
             // Set current values of selected book in text inputs
             // Change Submit button to Update button
             submitbut.innerText = "Update";
+            submitbut.classList.remove("btn-primary");
+            submitbut.classList.add("btn-positive");
             updateFlag = true;
 
-            notif.innerHTML = "Let's update " + elem.getAttribute("name");
-            notif.setAttribute("opened", true);
+            showNotification( "Let's update " + elem.getAttribute("name"));
         })
     })
 
@@ -69,18 +69,23 @@ const inicio = (books => {
         if (updateFlag) {
             //TODO
             // PUT request here, using input text values to build JSON
-            notif.innerHTML = "Updating Data... " + titext.value;
-            notif.setAttribute("opened", true);
+            showNotification("Updating Data... " + titext.value);
             // Change Submit button text
             submitbut.innerText = "Submit";
+            submitbut.classList.add("btn-primary");
+            submitbut.classList.remove("btn-positive");
             updateFlag = false;
         } else {
             //TODO
             // Post request here, using input text values to build JSON
-            notif.innerHTML = "Posting Data... " + titext.value;
-            notif.setAttribute("opened", true);
+            showNotification("Posting Data... " + titext.value)
         }
     })
 });
 
+
+function showNotification(text) {
+    notif.innerHTML = text;
+    notif.setAttribute("opened", true);
+}
 
