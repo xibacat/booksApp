@@ -1,11 +1,12 @@
 'use strict';
 
 const fetch = require('node-fetch');
-const recurso = "http://127.0.0.1:8080";
-
+// const recurso = "http://127.0.0.1:8080";
+const recurso = "https://eu-west-2.aws.data.mongodb-api.com/app/application-0-xugxs/endpoint";
+//const fetch = require('electron-fetch').default;
 //Get all the books:
 //TODO
-fetch(recurso + '/libros')
+fetch(recurso + '/books')
     .then(res => res.json())
     .then(json => inicio(json));
 

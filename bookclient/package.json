@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^8.2.3",
-    "node-fetch": "^2.6.0",
-    "xel": "0.0.220"
+    "node-fetch": "^2.6.13",
+    "xel": "0.0.220",
+    "electron-fetch": "^1.9.1"
   }
 }
