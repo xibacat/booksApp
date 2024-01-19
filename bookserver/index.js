@@ -6,7 +6,7 @@ app.use(bodyParser.json());
 
 //app.use('/public', express.static(__dirname + '/public'));
 
-app.get('/libros', (req, res) => {
+app.get('/books', (req, res) => {
     let fichero = fs.readFileSync('./books.json');
     let libros = JSON.parse(fichero);
     res.send(libros);
