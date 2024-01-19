@@ -32,10 +32,12 @@ const inicio = (books => {
                     <x-contextmenu>
                         <x-menu>
                             <x-menuitem class="del-item" name="${book.title}">
+                                <x-icon href="#delete"></x-icon>
                                 <x-label>Delete</x-label>
                             </x-menuitem>
 
                             <x-menuitem class="upd-item" name="${book.title}">
+                                <x-icon href="#edit"></x-icon>
                                 <x-label>Update</x-label>
                             </x-menuitem>
                         </x-menu>
