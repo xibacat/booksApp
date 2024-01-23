@@ -3,19 +3,20 @@
 //const fetch = require('node-fetch');
 //import fetch from 'node-fetch'
 // const recurso = "http://127.0.0.1:8080";
-const recurso = "https://eu-west-2.aws.data.mongodb-api.com/app/application-0-xugxs/endpoint";
-
-//Get all the books:
-//TODO
-fetch(recurso + '/books')
-    .then(res => res.json())
-    .then(json => inicio(json));
+const URL = "https://eu-west-2.aws.data.mongodb-api.com/app/application-0-xugxs/endpoint/books";
 
 var notif = document.getElementById("message");
 var titext = document.getElementById("title-text");
 var autext = document.getElementById("author-text");
 var imgtext = document.getElementById("img-text");
 var submitbut = document.getElementById("submit-btt");
+//Get all the books:
+//TODO
+fetch(URL)
+    .then(res => res.json())
+    .then(json => inicio(json));
+
+
 
 //To know if we are updating
 var updateFlag = false;
@@ -67,15 +68,47 @@ const inicio = (books => {
 
     submitbut.addEventListener("click", function (event) {
         event.preventDefault();
+        var data = {
+            title: titext.value,
+            author: autext.value,
+            img: imgtext.value
+        };
+        //fetch uses a request object
+        // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+        var request = {
+            method: "POST", // *GET, POST, PUT, DELETE, etc.     
+            // mode: "cors", // no-cors, *cors, same-origin
+            // cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+            // credentials: "same-origin", // include, *same-origin, omit       
+            headers: {
+                "Content-Type": "application/json",
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            // redirect: "follow", // manual, *follow, error
+            // referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+            body: JSON.stringify(data), // body data type must match "Content-Type" header
+        };
+
         if (updateFlag) {
             //TODO
             // PUT request here, using input text values to build JSON
-            showNotification("Updating Data... " + titext.value);
+
+
             // Change Submit button text
             changeButton();
         } else {
             //TODO
             // Post request here, using input text values to build JSON
+            fetch(URL, request)
+                .then(res => {
+                    showNotification("Updating Data... " + titext.value);
+                    console.log("POST result: " + res)
+                    //TODO : shown books must be refreshed
+                })
+                .catch(err => {
+                    showNotification("ERROR Updating Data... ")
+                    console.log("POST error: " + err)
+                });
             showNotification("Posting Data... " + titext.value)
         }
     })
